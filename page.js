@@ -10,9 +10,9 @@ function removeLoginPopup(nth) {
 }
 
 function findPopup() {
-  if (location.hostname.endsWith(".expedia.com")) {
-	return findExpediaPopup()
-  }
+  // if (location.hostname.endsWith(".expedia.com")) {
+  // 	return findExpediaPopup()
+  // }
   return findGooglePopup()
 }
 
