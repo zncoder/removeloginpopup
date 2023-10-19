@@ -26,6 +26,10 @@ function findGooglePopup() {
 	if (x.src.startsWith('https://accounts.google.com/gsi/iframe/select?')) {
 	  console.log('found', x)
 	  return x
+	} else if (x.src.startsWith('https://ogs.google.com/widget/callout')) {
+	  // google map
+	  console.log('found', x)
+	  return x
 	}
   }
   return null
