@@ -1,11 +1,14 @@
 function removeLoginPopup(nth) {
   let el = findPopup()
   if (el) {
+	console.log('found', el)
 	el.parentElement.removeChild(el)
 	return
   }
   if (nth < 2) {
 	setTimeout(removeLoginPopup, 5001, nth+1)
+  } else {
+	console.log('login popup not found')
   }
 }
 
@@ -24,15 +27,14 @@ function findGooglePopup() {
   let iframes = document.querySelectorAll('iframe')
   for (let x of iframes) {
 	if (x.src.startsWith('https://accounts.google.com/gsi/iframe/select?')) {
-	  console.log('found', x)
 	  return x
 	} else if (x.src.startsWith('https://ogs.google.com/widget/callout')) {
 	  // google map
-	  console.log('found', x)
 	  return x
 	}
   }
   return null
 }
 
+console.log('removeloginpopup')
 setTimeout(removeLoginPopup, 1001, 0)
